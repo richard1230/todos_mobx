@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useStore } from './store'
+import { observer } from 'mobx-react-lite'
 
 function App() {
+  const { cartStore } = useStore()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* 原始值 */}
+      {cartStore.list.toString()}
+      <br />
+      {/* 计算值 */}
+      {cartStore.filterList.toString()}
+      <br />
+      <button onClick={cartStore.addCart}>修改原始值</button>
     </div>
-  );
+  )
 }
-
-export default App;
+// 5. 使用observer方法让组件更新
+export default observer(App)
