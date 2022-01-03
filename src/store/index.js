@@ -1,12 +1,10 @@
 // 导入模块
-import CartStore from "./cart.Store"
-import CounterStore from "./counter.Store"
+import TaskStore from "./cart.Store"
 import React from "react"
 class RootStore {
   // 组合模块
   constructor() {
-    this.cartStore = new CartStore()
-    this.couterStore = new CounterStore()
+    this.taskStore = new TaskStore()
   }
 }
 // 实例化根store注入context

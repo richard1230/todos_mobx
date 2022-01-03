@@ -1,24 +1,20 @@
 
-import { computed, makeAutoObservable } from 'mobx'
-class CartStore {
-  list = [1, 2, 3, 4, 5]
+import {  makeAutoObservable } from 'mobx'
+class TaskStore {
+  list = [
+    {
+      id:1,
+      name: '学习react',
+      isDone: true
+    },
+    {
+      id:2,
+      name: '搞定mobx',
+      isDone: true
+    }
+  ]
   constructor() {
-    makeAutoObservable(this, {
-      filterList: computed
-    })
-  }
-  get filterList() {
-    return this.list.filter(item => item > 2)
-  }
-  addCart = () => {
-    this.list.push(6, 7, 8)
+    makeAutoObservable(this)
   }
 }
-export default CartStore
-
-
-
-
-
-
-
+export default TaskStore
