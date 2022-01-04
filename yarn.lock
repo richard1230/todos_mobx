@@ -7040,6 +7040,11 @@ react-scripts@5.0.0:
   optionalDependencies:
     fsevents "^2.3.2"
 
+react-uuid@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/react-uuid/download/react-uuid-1.0.2.tgz#c77cea91cf38eafb1aaa7910f92621b2ed91b969"
+  integrity sha1-x3zqkc846vsaqnkQ+SYhsu2RuWk=
+
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.npmmirror.com/react/download/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"

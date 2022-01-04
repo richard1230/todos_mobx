@@ -6,8 +6,8 @@ function Cart() {
         <h1>todos</h1>
         <input
           className="new-todo"
-          autofocus
-          autocomplete="off"
+          autoFocus
+          autoComplete="off"
           placeholder="What needs to be done?"
         />
       </header>
@@ -17,13 +17,22 @@ function Cart() {
           className="toggle-all"
           type="checkbox"
         />
-        <label for="toggle-all"></label>
+        <label htmlFor="toggle-all"></label>
         <ul className="todo-list">
           <li
             className="todo"
           >
             <div className="view">
               <input className="toggle" type="checkbox" />
+              <label >learn react</label>
+              <button className="destroy"></button>
+            </div>
+          </li>
+          <li
+            className="todo completed"
+          >
+            <div className="view">
+              <input className="toggle" type="checkbox" defaultChecked={true}/>
               <label >learn react</label>
               <button className="destroy"></button>
             </div>
