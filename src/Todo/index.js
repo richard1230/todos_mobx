@@ -1,5 +1,5 @@
 import './index.css'
-function Cart() {
+function Task() {
   return (
     <section className="todoapp">
       <header className="header">
@@ -43,4 +43,4 @@ function Cart() {
   )
 }
 
-export default Cart
+export default Task
