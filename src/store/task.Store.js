@@ -10,7 +10,7 @@ class TaskStore {
     {
       id:2,
       name: '搞定mobx',
-      isDone: true
+      isDone: false
     }
   ]
   constructor() {
