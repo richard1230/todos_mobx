@@ -1,9 +1,20 @@
 import './index.css'
 import {useStore} from "../store";
+import {useState} from "react";
+import {observer} from "mobx-react-lite";
 
 function Task() {
   //useStore
   const {taskStore} = useStore()
+  //单选受控
+  // const [check,setCheck] = useState()
+  //思想: mobx Store 去维护状态, input只需要把e.taget.value 交给store让它来进行修改
+
+  function onChange(e,id){
+    taskStore.singleCheck(id,e.target.checked)
+  }
+
+
   return (
     <section className="todoapp">
       <header className="header">
@@ -32,7 +43,13 @@ function Task() {
                 key={item.id}
               >
                 <div className="view">
-                  <input className="toggle" type="checkbox" defaultChecked={true}/>
+                  {/*单选框   受控和非受控方式*/}
+                  <input
+                    className="toggle"
+                    type="checkbox"
+                    checked={item.isDone }
+                    onChange={(e)=>onChange(e,item.id)}
+                  />
                   <label >{item.name}</label>
                   <button className="destroy"></button>
                 </div>
@@ -46,4 +63,4 @@ function Task() {
   )
 }
 
-export default Task
+export default observer(Task)
