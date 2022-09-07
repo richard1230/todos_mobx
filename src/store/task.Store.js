@@ -19,6 +19,15 @@ class TaskStore {
     makeAutoObservable(this)
   }
 
+  //计算属性, 只有所有属性选中的时候才是选中的状态
+  //前面有get,其实就是getter
+  get isAll() {
+    return this.list.every(item => item.isDone)
+  }
+
+  get isFinishedLength (){
+    return this.list.filter(item=>item.isDone).length
+  }
   //单选操作
   singleCheck(id, isDone) {
     //查找 find findIndex
@@ -34,11 +43,6 @@ class TaskStore {
     })
   }
 
-  //计算属性, 只有所有属性选中的时候才是选中的状态
-  //前面有get,其实就是getter
-  get isAll() {
-    return this.list.every(item => item.isDone)
-  }
 
   //删除
   delTask =(id)=>{
