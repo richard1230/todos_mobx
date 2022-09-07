@@ -9,11 +9,14 @@ function Task() {
   //单选受控
   // const [check,setCheck] = useState()
   //思想: mobx Store 去维护状态, input只需要把e.taget.value 交给store让它来进行修改
-
   function onChange(e,id){
     taskStore.singleCheck(id,e.target.checked)
   }
 
+  //全选
+  function allChange(e){
+    taskStore.allCheck(e.target.checked)
+  }
 
   return (
     <section className="todoapp">
@@ -26,11 +29,15 @@ function Task() {
           placeholder="What needs to be done?"
         />
       </header>
+
       <section className="main">
+        {/*全选*/}
         <input
           id="toggle-all"
           className="toggle-all"
           type="checkbox"
+          checked={taskStore.isAll}
+          onChange={allChange}
         />
         <label htmlFor="toggle-all"></label>
         <ul className="todo-list">
