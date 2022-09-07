@@ -1,5 +1,6 @@
 import {makeAutoObservable} from 'mobx'
 
+
 class TaskStore {
   list = [
     {
@@ -42,8 +43,15 @@ class TaskStore {
   //删除
   delTask =(id)=>{
     console.log(id);
-    this.list = this.list.filter(item => item.id !== id)
+    // this.list = this.list.filter(item => item.id !== id)
+    const index = this.list.findIndex(item => item.id === id)
+    this.list.splice(index,1)
   }
+
+  //新增
+  addTask=(task)=>{
+     this.list.push(task)
+}
 }
 
 
